@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head') %> 
+    
+<body>
+
+    <%- include('../partials/header') %> 
+
+    <div class="main-register">
+    
+        <div class="formulario">
+            
+         
+            <form method="POST" action="/perfil/edit/<%= user.id %>?_method=put " enctype="multipart/form-data">   
+
+                <div class="register">
+
+                    <h1 class="registrate">EDITAR PERFIL</h1><br>
+                        
+                            <label ></label>
+                            <input 
+                            type="text" 
+                            class="reg " 
+                            name="nombre" 
+                            id="nombre" 
+                            placeholder="Ingresa tu nombre" 
+                            value="<%= user.name %>"
+                            >
+
+                            <label for="apellido"></label>
+                            <input 
+                            type="text" 
+                            class="reg " 
+                            name="apellido" 
+                            id="apellido" 
+                            placeholder="Ingresa tu apellido" 
+                            value="<%= user.lastname %>"
+                            >
+                        
+                            <label for="Nombre de usuario"></label>
+                            <input 
+                            type="text" 
+                            class="reg " 
+                            name="nombreDeUsuario" 
+                            id="Nombre de usuario" 
+                            placeholder="Ingresa tu nombre de usuario" 
+                            value="<%= user.userName %>"
+                            >
+                        
+
+                            <label for="avatar">Elige una foto de perfil</label>
+                            <input 
+                            type="file" 
+                            name="avatar" 
+                            class="reg" 
+                            id="avatar"
+                            value="<%= user.avatar %>" 
+                            ><img src="/img/avatar/<%=user.avatar%>" alt="producto" width="100" class="product_img"></a>
+
+                            <label for="email"></label>
+                            <input 
+                            type="email" 
+                            class="reg" 
+                            name="email" 
+                            id="e-mail" 
+                            placeholder="Ingresa tu email" 
+                            value="<%= user.email %>"
+                            >
+
+                            <label for="tel"></label>
+                            <input 
+                            type="text" 
+                            class="reg" 
+                            name="tel" 
+                            id="tel" 
+                            placeholder="Celular/Teléfono" 
+                            value="<%= user.cel %>"
+                            >
+
+                            <label for="password"></label>
+                            <input 
+                            type="password" 
+                            class="reg" 
+                            name="password" 
+                            id="contraeña" 
+                            placeholder="Crea una contraseña" 
+                            value=""
+                            >
+                            
+                    
+                            <label for="contraeña"></label>
+                            <input 
+                            type="password" 
+                            class="reg" 
+                            name="otraPassword" 
+                            id="contraeña" 
+                            placeholder="Confirmar Contraseña" 
+                            value=""
+                            >
+                        
+                </form>
+
+                        <button  class="reg2" type="submit" href="/perfil/edit/<%= user.id %>" ><a >Actualizar datos</a> </button>
+                    
+                </div>
+        </div>
+
+    </div>
+
+    <%- include('../partials/footer') %>
+    
+</body>
+</html>
